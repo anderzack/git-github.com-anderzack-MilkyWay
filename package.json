@@ -1,9 +1,9 @@
 {
   "name": "csvoice",
   "version": "2.0.0",
-  "description": "fuwubao experiential plat",
+  "description": "",
   "homepage": "",
-  "author": "竹卢 <qiang.mou@alipay.com>",
+  "author": "anderzack",
   "scripts": {
     "dev": "dora --plugins webpack",
     "lint": "eslint src/component --ext js --ext jsx",
