@@ -1,0 +1,79 @@
+.newHomepage {
+  background-color: #333333;
+  .newHomepageBackground {
+    background-image: url(https://zos.alipayobjects.com/rmsportal/nPbruMGlBynefLNvGWcJ.jpg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    min-width: 1000px;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    zoom: 1;
+    filter: blur(1px);
+  }
+  .newHomepage-row {
+    margin: 0 auto;
+    color: #ffffff;
+    position: relative;
+    .newHomepage-cell {
+      //background-color: #333333;
+      display: inline-block;
+      //border: 1px solid #2c2c2c;
+      box-shadow: 0px 0px 4px #2c2c2c;
+      vertical-align: top;
+      .newHomepage-show {
+        height: 100%;
+        width: 100%;
+        padding-top: 15%;
+      }
+      .newHomepage-hover {
+        padding: 16px;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        top: -300px;
+        opacity: 0;
+        background-color: #28a3ef;
+        box-shadow: 0px 0px 20px #28a3ef;
+        &:hover {
+          opacity: 1;
+          transition: 0.5s linear;
+        }
+      }
+      .newHomepage-pic {
+        font-size: 64px;
+        border: 3px solid;
+        width: 100px;
+        height: 100px;
+        border-radius: 120px;
+        text-align: center;
+        margin-left: -25%;
+      }
+      .newHomepage-pic-box {
+        margin-left: 50%;
+      }
+      .newHomepage-title {
+        font-size: 24px;
+        letter-spacing: 2px;
+        text-align: center;
+        margin-top: 8%;
+        margin-bottom: 8%;
+        font-family: "Microsoft Yahei";
+      }
+      .newHomepage-desc {
+        font-size: 16px;
+        letter-spacing: 1px;
+        padding: 0px 16px;
+        font-family: "Microsoft Yahei";
+      }
+      .newHomepage-link {
+        margin-top: 8%;
+        text-align: center;
+      }
+    }
+  }
+}

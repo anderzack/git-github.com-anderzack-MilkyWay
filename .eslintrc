@@ -1,0 +1,11 @@
+{
+  "extends": "@alipay/eslint-config-antp",
+  "plugins": ["react"],
+  "rules": {
+    "id-length": [1, {"min": 1, "max": 20, "properties": "never", "exceptions": ["x"]}],
+    "comma-dangle": [0, "never"],
+    "spaced-comment": [0, "always"],
+    "func-names": 0,
+    "react/jsx-space-before-closing": 0
+  }
+}

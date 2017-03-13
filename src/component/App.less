@@ -1,0 +1,28 @@
+body {
+  background-color: #ececec; // #F2F6F9 #ececec
+}
+
+#main {
+  position: relative;
+  .container {
+    width: 1160px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 4px;
+    min-height: 550px;
+  }
+}
+
+/* 清理浮动 */
+.fn-clear:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.fn-clear {
+  zoom: 1; /* for IE6 IE7 */
+}

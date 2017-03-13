@@ -1,0 +1,193 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "义理",
+      "account": "anderzack"
+    },
+    {
+      "id": 2,
+      "name": "Zbcd",
+      "account": "Zbcd"
+    },
+    {
+      "id": 3,
+      "name": "Ybcd",
+      "account": "Ybcd"
+    }
+  ],
+  "prods": [
+    {
+      "id": 1,
+      "name": "产品A",
+      "price": 10000,
+      "versionId": 1,
+      "state": "online"
+    },
+    {
+      "id": 2,
+      "name": "产品B",
+      "price": 5000,
+      "versionId": 2,
+      "state": "online"
+    },
+    {
+      "id": 3,
+      "name": "产品C",
+      "price": 500,
+      "versionId": 3,
+      "state": "online"
+    },
+    {
+      "name": "产品Egg",
+      "price": "315",
+      "versionId": "9",
+      "state": "offline",
+      "id": 4
+    }
+  ],
+  "versions": [
+    {
+      "id": 1,
+      "name": "产品A",
+      "price": 10000,
+      "prodId": 1
+    },
+    {
+      "id": 2,
+      "name": "产品B",
+      "price": 5000,
+      "prodId": 2
+    },
+    {
+      "id": 3,
+      "name": "产品C",
+      "price": 500,
+      "prodId": 3
+    },
+    {
+      "id": 4,
+      "name": "产品E",
+      "price": 300,
+      "prodId": 4
+    },
+    {
+      "name": "产品EGeA",
+      "price": "300",
+      "prodId": 4,
+      "id": 5
+    },
+    {
+      "name": "产品999",
+      "price": "300",
+      "prodId": "4",
+      "id": 6
+    },
+    {
+      "name": "产品999",
+      "price": "310",
+      "prodId": "4",
+      "id": 7
+    },
+    {
+      "name": "产品999",
+      "price": "315",
+      "prodId": "4",
+      "id": 8
+    },
+    {
+      "name": "产品Egg",
+      "price": "315",
+      "prodId": "4",
+      "id": 9
+    },
+    {
+      "name": "产品Egg",
+      "price": "315",
+      "prodId": "4",
+      "id": 10
+    }
+  ],
+  "bizs": [
+    {
+      "id": 1,
+      "date": "2017-03-01 20:50:50",
+      "userId": 1,
+      "prodId": 1,
+      "versionId": 1,
+      "count": 20,
+      "price": 10000,
+      "prodName": "产品A"
+    },
+    {
+      "id": 2,
+      "date": "2017-03-01 20:50:50",
+      "userId": 1,
+      "prodId": 2,
+      "versionId": 2,
+      "count": 10,
+      "price": 5000,
+      "prodName": "产品B"
+    },
+    {
+      "id": 3,
+      "date": "2017-03-01 20:50:50",
+      "userId": 1,
+      "prodId": 3,
+      "versionId": 3,
+      "count": 5,
+      "price": 500,
+      "prodName": "产品C"
+    },
+    {
+      "id": 4,
+      "date": "2017-03-01 20:50:50",
+      "userId": 2,
+      "prodId": 4,
+      "versionId": 4,
+      "count": 17,
+      "price": 300,
+      "prodName": "产品D"
+    }
+  ],
+  "goods": [
+    {
+      "id": 1,
+      "type": "money",
+      "userId": 1,
+      "value": 100000
+    },
+    {
+      "id": 2,
+      "type": "money",
+      "userId": 2,
+      "value": 200000
+    },
+    {
+      "id": 3,
+      "type": "money",
+      "userId": 3,
+      "value": 200000
+    }
+  ],
+  "points": [
+    {
+      "id": 1,
+      "type": "PCard",
+      "userId": 1,
+      "value": 9900
+    },
+    {
+      "id": 2,
+      "type": "PCard",
+      "userId": 2,
+      "value": 19900
+    },
+    {
+      "id": 3,
+      "type": "PCard",
+      "userId": 3,
+      "value": 29900
+    }
+  ]
+}
