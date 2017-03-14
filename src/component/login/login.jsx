@@ -21,6 +21,7 @@ const Login = React.createClass(
             <div className="sub-title">注册账号</div>
           </div>
         </div>
+
       );
     }
   }
