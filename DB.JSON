@@ -41,9 +41,30 @@
     {
       "name": "产品Egg",
       "price": "315",
-      "versionId": "9",
-      "state": "offline",
+      "versionId": "10",
+      "state": "online",
       "id": 4
+    },
+    {
+      "name": "新增商品 ABC",
+      "price": "99800",
+      "versionId": "1",
+      "state": "online",
+      "id": 5
+    },
+    {
+      "name": "蒙牛12小时酸奶",
+      "price": "1050",
+      "versionId": "1",
+      "state": "online",
+      "id": 6
+    },
+    {
+      "id": 7,
+      "name": "伊利早餐奶",
+      "price": "420",
+      "versionId": "2",
+      "state": "online"
     }
   ],
   "versions": [
@@ -106,6 +127,36 @@
       "price": "315",
       "prodId": "4",
       "id": 10
+    },
+    {
+      "name": "产品Egg",
+      "price": "315",
+      "prodId": "4",
+      "id": 11
+    },
+    {
+      "name": "新增商品 ABC",
+      "price": "99800",
+      "prodId": "5",
+      "id": 12
+    },
+    {
+      "name": "蒙牛12小时酸奶",
+      "price": "1050",
+      "prodId": "6",
+      "id": 13
+    },
+    {
+      "name": "伊利早餐奶",
+      "price": "450",
+      "prodId": "7",
+      "id": 14
+    },
+    {
+      "name": "伊利早餐奶",
+      "price": "420",
+      "prodId": "7",
+      "id": 15
     }
   ],
   "bizs": [

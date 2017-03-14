@@ -1,5 +1,5 @@
 import React from 'react';
-import ajax from '../common/ajax.js';
+import ajax from '../../common/ajax.js';
 import { Table } from 'antd';
 
 const AssertMng = React.createClass(

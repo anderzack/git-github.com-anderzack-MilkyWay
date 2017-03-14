@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon, Input, Col } from 'antd';
-import './editableCell.less';
+import './Manage.less';
 
 const EditableCell = React.createClass(
   {

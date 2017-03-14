@@ -34,7 +34,7 @@ const Index = React.createClass(
               defaultSelectedKeys={['2']}
               style={{ lineHeight: '64px', border:0 }}
               >
-              <div>Milky Way - 健康奶源, 用心智造</div>
+              <div style={{fontSize:18}}>Milky Way - 健康奶源, 用心智造</div>
             </Menu>
           </Header>
           <Content style={{ padding: '0 50px' }}>
