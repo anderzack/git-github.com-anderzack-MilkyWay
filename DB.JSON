@@ -3,17 +3,32 @@
     {
       "id": 1,
       "name": "义理",
-      "account": "anderzack"
+      "account": "anderzack",
+      "password": "123"
     },
     {
       "id": 2,
       "name": "Zbcd",
-      "account": "Zbcd"
+      "account": "Zbcd",
+      "password": "123"
     },
     {
       "id": 3,
       "name": "Ybcd",
-      "account": "Ybcd"
+      "account": "Ybcd",
+      "password": "123"
+    },
+    {
+      "name": "光明牛奶",
+      "account": "guangming",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "name": "光明酸奶",
+      "account": "guangmings",
+      "password": "12345678",
+      "id": 5
     }
   ],
   "prods": [
