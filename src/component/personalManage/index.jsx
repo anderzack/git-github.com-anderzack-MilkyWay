@@ -11,6 +11,10 @@ import AssetMng from './AssetMng.jsx';
 
 const Index = React.createClass(
   {
+    propTypes: {
+      params: React.PropTypes.object
+    },
+
     getInitialState(){
       return {
         menuIndex: "1"
@@ -20,9 +24,10 @@ const Index = React.createClass(
     handleClick(e){this.setState({menuIndex: e.key})},
 
     render() {
-      let content = <BizMng />;
-      if (this.state.menuIndex === '2') {content = <ProdMng />}
-      if (this.state.menuIndex === '3') {content = <AssetMng />}
+      let uid = this.props.params.uid;
+      let content = <BizMng uid={uid} />;
+      if (this.state.menuIndex === '2') {content = <ProdMng uid={uid} />}
+      if (this.state.menuIndex === '3') {content = <AssetMng uid={uid} />}
 
       return (
         <Layout>

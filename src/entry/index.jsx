@@ -19,7 +19,7 @@ ReactDom.render(
     <Router history={hashHistory}>
       <Route component={App}>
         <Route path="/" component={home}></Route>
-        <Route path="/production/index" component={index}></Route>
+        <Route path="/production/index/:uid" component={index}></Route>
       </Route>
       <Route component={AntM}>
         <Route path="/login" component={login}></Route>

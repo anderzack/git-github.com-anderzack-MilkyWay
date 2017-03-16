@@ -37,27 +37,31 @@
       "name": "产品A",
       "price": 10000,
       "versionId": 1,
-      "state": "online"
+      "state": "online",
+      "userId": 1
     },
     {
       "id": 2,
       "name": "产品B",
       "price": 5000,
       "versionId": 2,
-      "state": "online"
+      "state": "online",
+      "userId": 4
     },
     {
       "id": 3,
       "name": "产品C",
       "price": 500,
       "versionId": 3,
-      "state": "online"
+      "state": "online",
+      "userId": 4
     },
     {
       "name": "产品Egg",
       "price": "315",
       "versionId": "10",
       "state": "online",
+      "userId": 4,
       "id": 4
     },
     {
@@ -65,6 +69,7 @@
       "price": "99800",
       "versionId": "1",
       "state": "online",
+      "userId": 4,
       "id": 5
     },
     {
@@ -72,6 +77,7 @@
       "price": "1050",
       "versionId": "1",
       "state": "online",
+      "userId": 5,
       "id": 6
     },
     {
@@ -79,160 +85,147 @@
       "name": "伊利早餐奶",
       "price": "420",
       "versionId": "2",
-      "state": "online"
+      "state": "online",
+      "userId": 5
+    },
+    {
+      "id": 8,
+      "name": "光明牛奶A+",
+      "price": "2600",
+      "versionId": "8",
+      "state": "online",
+      "userId": "4"
     }
   ],
   "versions": [
     {
-      "id": 1,
-      "name": "产品A",
-      "price": 10000,
-      "prodId": 1
+      "name": "光明牛奶A+",
+      "price": "2500",
+      "prodId": "8",
+      "versionId": "4",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "产品B",
-      "price": 5000,
-      "prodId": 2
+      "name": "光明牛奶A+",
+      "price": "2501",
+      "prodId": "8",
+      "versionId": "5",
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "产品C",
-      "price": 500,
-      "prodId": 3
+      "name": "光明牛奶A+",
+      "price": "2501",
+      "prodId": "8",
+      "versionId": "5",
+      "id": 3
     },
     {
-      "id": 4,
-      "name": "产品E",
-      "price": 300,
-      "prodId": 4
+      "name": "光明牛奶A+",
+      "price": "2600",
+      "prodId": "8",
+      "versionId": "5",
+      "id": 4
     },
     {
-      "name": "产品EGeA",
-      "price": "300",
-      "prodId": 4,
+      "name": "光明牛奶A+",
+      "price": "2601",
+      "prodId": "8",
+      "versionId": "6",
       "id": 5
     },
     {
-      "name": "产品999",
-      "price": "300",
-      "prodId": "4",
+      "name": "光明牛奶A+",
+      "price": "2602",
+      "prodId": "8",
+      "versionId": "7",
       "id": 6
     },
     {
-      "name": "产品999",
-      "price": "310",
-      "prodId": "4",
+      "name": "光明牛奶A+",
+      "price": "2600",
+      "prodId": "8",
+      "versionId": "8",
       "id": 7
+    }
+  ],
+  "orders": [
+    {
+      "date": "2017-03-16 22:22:40",
+      "userId": "1",
+      "friendId": "4",
+      "price": "105000",
+      "id": 1
     },
     {
-      "name": "产品999",
-      "price": "315",
-      "prodId": "4",
-      "id": 8
-    },
-    {
-      "name": "产品Egg",
-      "price": "315",
-      "prodId": "4",
-      "id": 9
-    },
-    {
-      "name": "产品Egg",
-      "price": "315",
-      "prodId": "4",
-      "id": 10
-    },
-    {
-      "name": "产品Egg",
-      "price": "315",
-      "prodId": "4",
-      "id": 11
-    },
-    {
-      "name": "新增商品 ABC",
-      "price": "99800",
-      "prodId": "5",
-      "id": 12
-    },
-    {
-      "name": "蒙牛12小时酸奶",
-      "price": "1050",
-      "prodId": "6",
-      "id": 13
-    },
-    {
-      "name": "伊利早餐奶",
-      "price": "450",
-      "prodId": "7",
-      "id": 14
-    },
-    {
-      "name": "伊利早餐奶",
-      "price": "420",
-      "prodId": "7",
-      "id": 15
+      "date": "2017-03-16 22:34:09",
+      "userId": "1",
+      "friendId": "5",
+      "price": "840",
+      "id": 2
     }
   ],
   "bizs": [
     {
-      "id": 1,
-      "date": "2017-03-01 20:50:50",
-      "userId": 1,
-      "prodId": 1,
-      "versionId": 1,
-      "count": 20,
-      "price": 10000,
-      "prodName": "产品A"
+      "orderId": "1",
+      "date": "2017-03-16 22:22:40",
+      "userId": "1",
+      "prodId": "4",
+      "versionId": "8",
+      "count": "2",
+      "price": "2600",
+      "prodName": "光明牛奶A+",
+      "id": 1
     },
     {
-      "id": 2,
-      "date": "2017-03-01 20:50:50",
-      "userId": 1,
-      "prodId": 2,
-      "versionId": 2,
-      "count": 10,
-      "price": 5000,
-      "prodName": "产品B"
+      "orderId": "1",
+      "date": "2017-03-16 22:22:40",
+      "userId": "1",
+      "prodId": "4",
+      "versionId": "1",
+      "count": "1",
+      "price": "99800",
+      "prodName": "新增商品 ABC",
+      "id": 2
     },
     {
-      "id": 3,
-      "date": "2017-03-01 20:50:50",
-      "userId": 1,
-      "prodId": 3,
-      "versionId": 3,
-      "count": 5,
-      "price": 500,
-      "prodName": "产品C"
-    },
-    {
-      "id": 4,
-      "date": "2017-03-01 20:50:50",
-      "userId": 2,
-      "prodId": 4,
-      "versionId": 4,
-      "count": 17,
-      "price": 300,
-      "prodName": "产品D"
+      "orderId": "2",
+      "date": "2017-03-16 22:34:09",
+      "userId": "1",
+      "prodId": "5",
+      "versionId": "2",
+      "count": "2",
+      "price": "420",
+      "prodName": "伊利早餐奶",
+      "id": 3
     }
   ],
   "goods": [
     {
       "id": 1,
       "type": "money",
-      "userId": 1,
-      "value": 100000
+      "userId": "1",
+      "friendId": "4",
+      "value": "9894900"
     },
     {
       "id": 2,
       "type": "money",
       "userId": 2,
+      "friendId": 4,
       "value": 200000
     },
     {
       "id": 3,
       "type": "money",
-      "userId": 3,
+      "userId": "1",
+      "friendId": "5",
+      "value": "182570"
+    },
+    {
+      "id": 4,
+      "type": "money",
+      "userId": 2,
+      "friendId": 5,
       "value": 200000
     }
   ],
@@ -241,19 +234,41 @@
       "id": 1,
       "type": "PCard",
       "userId": 1,
+      "friendId": 4,
       "value": 9900
     },
     {
       "id": 2,
       "type": "PCard",
       "userId": 2,
+      "friendId": 4,
       "value": 19900
     },
     {
       "id": 3,
       "type": "PCard",
       "userId": 3,
+      "friendId": 5,
       "value": 29900
+    },
+    {
+      "id": 4,
+      "type": "PCard",
+      "userId": 1,
+      "friendId": 5,
+      "value": 29900
+    }
+  ],
+  "relations": [
+    {
+      "id": 1,
+      "myId": 1,
+      "userId": 5
+    },
+    {
+      "id": 2,
+      "myId": 1,
+      "userId": 4
     }
   ]
 }

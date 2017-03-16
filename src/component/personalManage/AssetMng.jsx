@@ -18,10 +18,9 @@ const AssertMng = React.createClass(
       ajax(
         {
           type: 'get',
-          url: 'http://localhost:3000/users?_embed=goods&_embed=points',
+          url: 'http://localhost:3000/goods?friendId=' + this.props.uid + '&_expand=user',
           data: {},
           success: (d) => {
-            console.log(d)
             this.setState({assertList: d});
           }
         }
@@ -30,10 +29,9 @@ const AssertMng = React.createClass(
 
     render() {
       const columns = [
-        {title: '用户', dataIndex: 'name', key: 'name'},
-        {title: '账号', dataIndex: 'account', key: 'account'},
-        {title: '余额', dataIndex: 'goods[0].value', key: 'goods[0].value'},
-        {title: '点券', dataIndex: 'points[0].value', key: 'points[0].value'},
+        {title: '用户', dataIndex: 'user.name', key: 'user.name'},
+        {title: '账号', dataIndex: 'user.account', key: 'user.account'},
+        {title: '余额', dataIndex: 'value', key: 'value'}
       ];
       return (
         <div>

@@ -4,17 +4,18 @@
   .big-title {
     color: #fff;
     font-size: .85rem;
-    padding: 30px 0 18px 0;
+    padding: .5rem 0;
     text-align: center;
     letter-spacing: .25rem;
     border-bottom: 1px solid #fff;
-    position: fixed;
+    //position: fixed;
     width: 100%;
   }
   .footer-bar {
+    background-color: #1DA57A;
     color: #fff;
     font-size: .65rem;
-    padding: 18px 0 30px 0;
+    padding: .5rem 0;;
     text-align: center;
     letter-spacing: .15rem;
     border-top: 1px solid #fff;
@@ -24,5 +25,27 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+  }
+  .main-area {
+    .order-market {
+      padding: 1rem;
+      .market-friend-list {
+        height: 24rem;
+        overflow-y: scroll;
+      }
+      .market-friend-item {
+        padding: .25rem 0;
+      }
+      .market-friend-control {
+        padding: .3rem 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    .my-orders {
+      height: 29rem;
+      overflow-y: scroll;
+    }
   }
 }

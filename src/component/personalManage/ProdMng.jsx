@@ -7,6 +7,10 @@ import './Manage.less';
 
 const ProdMng = React.createClass(
   {
+    propTypes: {
+      uid: React.PropTypes.any
+    },
+
     getInitialState(){
       return {
         prodList: [],
@@ -25,7 +29,7 @@ const ProdMng = React.createClass(
       ajax(
         {
           type: 'get',
-          url: 'http://localhost:3000/prods?_sort=id&_order=DESC&name_like=' + this.state.prodNameSearchText,
+          url: 'http://localhost:3000/prods?userId=' + this.props.uid + '&_sort=id&_order=DESC&name_like=' + this.state.prodNameSearchText,
           data: {},
           success: (d) => {
             this.setState({prodList: d});
@@ -41,21 +45,27 @@ const ProdMng = React.createClass(
         {
           type: 'POST',
           url: 'http://localhost:3000/versions/',
-          data: {name: data.name, price: parseInt(data.price), prodId: parseInt(data.id)},
+          data: {
+            name: data.name,
+            price: parseInt(data.price),
+            prodId: parseInt(data.id),
+            versionId: parseInt(data.versionId),
+          },
           success: (d) => {}
         }
       );
       // 修改产品信息
       ajax(
         {
-          type: 'put',
+          type: 'PATCH',
           url: 'http://localhost:3000/prods/' + data.id,
           data: {
             id: parseInt(data.id),
             name: data.name,
             price: parseInt(data.price),
-            versionId: parseInt(data.versionId) + 1,
-            state: data.state
+            versionId: parseInt(data.versionId),
+            state: data.state,
+            userId: this.props.uid
           },
           success: (d) => {}
         }
@@ -73,7 +83,8 @@ const ProdMng = React.createClass(
             name: prodInfo.name,
             price: parseInt(prodInfo.price),
             versionId: parseInt(prodInfo.versionId),
-            state: prodInfo.state
+            state: prodInfo.state,
+            userId: this.props.uid
           },
           success: (d) => {}
         }
@@ -91,7 +102,8 @@ const ProdMng = React.createClass(
             name: this.state.newProdName,
             price: parseInt(this.state.newProdPrice),
             versionId: 1,
-            state: 'online'
+            state: 'online',
+            userId: this.props.uid
           },
           success: (d) => {
             ajax(
@@ -99,7 +111,7 @@ const ProdMng = React.createClass(
                 type: 'post',
                 url: 'http://localhost:3000/versions/',
                 data: {
-                  name: d.name, price: parseInt(d.price), prodId: parseInt(d.id)
+                  name: d.name, price: parseInt(d.price), prodId: parseInt(d.id), versionId: 1
                 },
                 success: (d) => {
                   this.setState({loading: false, visible: false, prodNameSearchText: ''}, ()=>this.getProdList());
@@ -114,6 +126,7 @@ const ProdMng = React.createClass(
     onCellChange(index, key, value){
       let prodList = deepcopy(this.state.prodList);
       prodList[index][key] = value;
+      prodList[index].versionId = parseInt(prodList[index].versionId) + 1;
       this.setState({prodList: prodList}, ()=> {this.editProdById(prodList[index])});
     },
 
