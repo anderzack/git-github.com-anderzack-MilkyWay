@@ -49,7 +49,7 @@ const ProdMng = React.createClass(
             name: data.name,
             price: parseInt(data.price),
             prodId: parseInt(data.id),
-            versionId: parseInt(data.versionId),
+            versionId: parseInt(data.versionId)
           },
           success: (d) => {}
         }

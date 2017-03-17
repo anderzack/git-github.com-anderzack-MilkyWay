@@ -86,54 +86,20 @@ const OrderMarket = React.createClass(
           url: 'http://localhost:3000/orders/',
           data: {
             date: currentDate,
-            userId: this.props.uid,
-            friendId: this.state.friendPage,
-            price: price
+            userId: parseInt(this.props.uid),
+            friendId: parseInt(this.state.friendPage),
+            price: parseInt(price)
           },
           success: (d) => {
-            console.log('createOrder', d, isCreate, price, newValue);
-            // 记录产品流水
-            this.createBiz(currentDate, d.id);
             // 更新账户余额
-            this.updateAssert(newValue);
+            this.updateAssert(newValue, currentDate, d.id);
           }
         }
       );
     },
-
-    // 记录产品流水
-    createBiz(currentDate, orderId){
-      this.state.prodList.forEach(
-        (o)=> {
-          if (o.num !== 0) {
-            ajax(
-              {
-                type: 'POST',
-                url: 'http://localhost:3000/bizs/',
-                data: {
-                  "orderId": orderId,
-                  "date": currentDate,
-                  "userId": this.props.uid,
-                  "prodId": this.state.friendPage,
-                  "versionId": o.versionId,
-                  "count": o.num,
-                  "price": o.price,
-                  "prodName": o.name
-                },
-                success: (d) => {
-                  console.log("createBiz", d, currentDate, orderId);
-                }
-              }
-            );
-          }
-        }
-      );
-    },
-
     // 更新余额
-    updateAssert(newValue){
+    updateAssert(newValue, currentDate, orderId){
       let assert = this.state.assert;
-      console.log("updateAssert =", assert, newValue);
       ajax(
         {
           type: 'PATCH',
@@ -142,13 +108,41 @@ const OrderMarket = React.createClass(
             //type: assert.type,
             //userId: assert.userId,
             //friendId: assert.friendId,
-            value: newValue
+            value: parseInt(newValue)
           },
           success: (d) => {
-            console.log("updateAssert ==== ", d, newValue);
+            // 记录产品流水
+            this.createBiz(currentDate, orderId, this.state.prodList);
           }
         }
       );
+    },
+    // 记录产品流水
+    createBiz(currentDate, orderId, prodList){
+      if (prodList.length > 0) {
+        let o = prodList[0];
+        ajax(
+          {
+            type: 'POST',
+            url: 'http://localhost:3000/bizs/',
+            data: {
+              "orderId": parseInt(orderId),
+              "date": currentDate,
+              "userId": parseInt(this.props.uid),
+              "friendId": parseInt(this.state.friendPage),
+              "prodId": parseInt(o.id),
+              "versionId": parseInt(o.versionId),
+              "count": parseInt(o.num),
+              "price": parseInt(o.price),
+              "prodName": o.name
+            },
+            success: (d) => {
+              prodList.splice(0, 1);
+              this.createBiz(currentDate, orderId, prodList);
+            }
+          }
+        );
+      }
     },
 
     render() {
@@ -204,8 +198,6 @@ const OrderMarket = React.createClass(
 
       let isCreate = false;
       if (totalPrice > 0 && (this.state.assert.value - totalPrice >= 0)) {isCreate = true}
-
-      console.log('isCreate', isCreate);
 
       let prodPage =
         <div>
