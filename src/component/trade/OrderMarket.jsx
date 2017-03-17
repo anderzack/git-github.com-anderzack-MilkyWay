@@ -121,6 +121,9 @@ const OrderMarket = React.createClass(
     createBiz(currentDate, orderId, prodList){
       if (prodList.length > 0) {
         let o = prodList[0];
+        if (parseInt(o.num) === 0) {
+          return;
+        }
         ajax(
           {
             type: 'POST',

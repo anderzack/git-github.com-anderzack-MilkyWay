@@ -171,80 +171,82 @@
   ],
   "orders": [
     {
-      "date": "2017-03-17 13:57:24",
+      "date": "2017-03-17 15:32:37",
       "userId": "1",
-      "friendId": "4",
-      "price": "15115",
+      "friendId": "5",
+      "price": "4200",
       "id": 1
     },
     {
-      "date": "2017-03-17 13:57:35",
+      "date": "2017-03-17 15:32:43",
       "userId": "1",
       "friendId": "5",
-      "price": "2940",
+      "price": "8400",
       "id": 2
+    },
+    {
+      "date": "2017-03-17 15:34:25",
+      "userId": "1",
+      "friendId": "5",
+      "price": "2100",
+      "id": 3
+    },
+    {
+      "date": "2017-03-17 15:34:31",
+      "userId": "1",
+      "friendId": "5",
+      "price": "1470",
+      "id": 4
     }
   ],
   "bizs": [
     {
       "orderId": "1",
-      "date": "2017-03-17 13:57:24",
-      "userId": "1",
-      "friendId": "4",
-      "prodId": "8",
-      "versionId": "11",
-      "count": "2",
-      "price": "2400",
-      "prodName": "光明牛奶A+",
-      "id": 1
-    },
-    {
-      "orderId": "1",
-      "date": "2017-03-17 13:57:24",
-      "userId": "1",
-      "friendId": "4",
-      "prodId": "4",
-      "versionId": "10",
-      "count": "1",
-      "price": "315",
-      "prodName": "产品Egg",
-      "id": 2
-    },
-    {
-      "orderId": "1",
-      "date": "2017-03-17 13:57:24",
-      "userId": "1",
-      "friendId": "4",
-      "prodId": "2",
-      "versionId": "2",
-      "count": "2",
-      "price": "5000",
-      "prodName": "产品B",
-      "id": 3
-    },
-    {
-      "orderId": "2",
-      "date": "2017-03-17 13:57:35",
+      "date": "2017-03-17 15:32:37",
       "userId": "1",
       "friendId": "5",
       "prodId": "7",
       "versionId": "2",
-      "count": "2",
+      "count": "10",
       "price": "420",
       "prodName": "伊利早餐奶",
-      "id": 4
+      "id": 1
     },
     {
       "orderId": "2",
-      "date": "2017-03-17 13:57:35",
+      "date": "2017-03-17 15:32:43",
+      "userId": "1",
+      "friendId": "5",
+      "prodId": "7",
+      "versionId": "2",
+      "count": "20",
+      "price": "420",
+      "prodName": "伊利早餐奶",
+      "id": 2
+    },
+    {
+      "orderId": "4",
+      "date": "2017-03-17 15:34:31",
+      "userId": "1",
+      "friendId": "5",
+      "prodId": "7",
+      "versionId": "2",
+      "count": "1",
+      "price": "420",
+      "prodName": "伊利早餐奶",
+      "id": 3
+    },
+    {
+      "orderId": "4",
+      "date": "2017-03-17 15:34:31",
       "userId": "1",
       "friendId": "5",
       "prodId": "6",
       "versionId": "1",
-      "count": "2",
+      "count": "1",
       "price": "1050",
       "prodName": "蒙牛12小时酸奶",
-      "id": 5
+      "id": 4
     }
   ],
   "goods": [
@@ -253,7 +255,7 @@
       "type": "money",
       "userId": "1",
       "friendId": "4",
-      "value": "8796825"
+      "value": "8770425"
     },
     {
       "id": 2,
@@ -267,7 +269,7 @@
       "type": "money",
       "userId": "1",
       "friendId": "5",
-      "value": "167240"
+      "value": "146450"
     },
     {
       "id": 4,
