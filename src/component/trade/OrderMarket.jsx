@@ -31,7 +31,29 @@ const OrderMarket = React.createClass(
         {
           type: 'GET',
           url: 'http://localhost:3000/relations?myId=' + this.props.uid + '&_expand=user',
-          success: (d) => {this.setState({friendList: d})}
+          success: (d) => {
+            this.setState({friendList: d}, ()=>this.getFriendGoods())
+          }
+        }
+      );
+    },
+
+    getFriendGoods(){
+      this.state.friendList.map(
+        (o, i)=> {
+          // 查询在商家那儿充钱的列表
+          ajax(
+            {
+              type: 'GET',
+              url: 'http://localhost:3000/goods?userId=' + this.props.uid + '&friendId=' + o.userId,
+              success: (d) => {
+                let friendList = this.state.friendList;
+                let temp = friendList[i];
+                friendList[i] = {...temp, goods: d};
+                this.setState({friendList: friendList})
+              }
+            }
+          );
         }
       );
     },
@@ -154,11 +176,19 @@ const OrderMarket = React.createClass(
           return (
             <div key={i} className="market-friend-item">
               <List>
-                <Item arrow="horizontal" thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
-                      onClick={this.gotoProdList.bind(this,o.user)}
-                  >
+                <Item thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
+                      style={{borderBottom:'1px solid'}}>
                   {o.user.name}
-                  <Brief>{o.user.desc}</Brief>
+                  {o.goods ? <Brief>余额 : {(o.goods[0].value / 100).toFixed(2)}</Brief> : null}
+                </Item>
+                <Item>
+                  <div className="market-control-btn">
+                    <i className="fa fa-credit-card"></i>
+                    充值
+                  </div>
+                  <div className="market-control-btn" onClick={this.gotoProdList.bind(this,o.user)}>
+                    <i className="fa fa-bitbucket" />购物
+                  </div>
                 </Item>
               </List>
             </div>
