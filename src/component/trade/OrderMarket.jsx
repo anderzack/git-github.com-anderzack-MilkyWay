@@ -173,13 +173,14 @@ const OrderMarket = React.createClass(
     render() {
       let friendList = this.state.friendList.map(
         (o, i)=> {
+          console.log("o.goods", o);
           return (
             <div key={i} className="market-friend-item">
               <List>
                 <Item thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
                       style={{borderBottom:'1px solid'}}>
                   {o.user.name}
-                  {o.goods ? <Brief>余额 : {(o.goods[0].value / 100).toFixed(2)}</Brief> : null}
+                  {o.goods && o.goods.length > 0 ? <Brief>余额 : {(o.goods[0].value / 100).toFixed(2)}</Brief> : null}
                 </Item>
                 <Item>
                   <div className="market-control-btn">

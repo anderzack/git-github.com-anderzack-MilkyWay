@@ -5,8 +5,8 @@ import { TabBar, Icon } from 'antd-mobile';
 import OrderMarket from './OrderMarket.jsx';
 // 我的订单
 import MyOrders from './MyOrders.jsx';
-
 // 发现商家
+import Find from './Find.jsx';
 
 const Market = React.createClass(
   {
@@ -28,7 +28,10 @@ const Market = React.createClass(
         title = "我的订单";
         content = <MyOrders uid={this.props.params.uid} />;
       }
-      if (page === 3) {title = "发现商家"}
+      if (page === 3) {
+        title = "发现商家";
+        content = <Find uid={this.props.params.uid} />
+      }
 
       return (
         <div className="market-container">
