@@ -1,10 +1,10 @@
 import React from 'react';
-import { Button, List, InputItem, Flex, WhiteSpace } from 'antd-mobile';
+import { Button, Input, Icon } from 'antd';
 import { History } from 'react-router';
-import './login.less';
+import './pcLogin.less';
 import ajax from '../../common/ajax.js';
 
-const Login = React.createClass(
+const pcLogin = React.createClass(
   {
     mixins: [History],
 
@@ -31,7 +31,7 @@ const Login = React.createClass(
             url: 'http://localhost:3000/users?account=' + this.state.account + '&password=' + this.state.password,
             // TODO: 成功, 模拟跳转...后面上了JAVA服务器代码, 通过session控制
             success: (d) => {
-              if (d.length === 1) {this.history.pushState(null, '/main/' + d[0].id)} else {
+              if (d.length === 1) {this.history.pushState(null, '/production/index/' + d[0].id)} else {
                 this.setState(
                   {
                     showNote: true,
@@ -85,9 +85,9 @@ const Login = React.createClass(
     },
 
     render() {
-      let rightCheckedCSS = {right: 0, position: "absolute", color: "#1DA57A"};
-      let rightNoPassCSS = {right: 0, position: "absolute", color: "#f44336"};
-      let rightLoadingCSS = {right: 0, position: "absolute", color: "#ff9800"};
+      let rightCheckedCSS = {top: "-8px", right: 0, position: "absolute", color: "#1DA57A"};
+      let rightNoPassCSS = {top: "-8px", right: 0, position: "absolute", color: "#f44336"};
+      let rightLoadingCSS = {top: "-8px", right: 0, position: "absolute", color: "#ff9800"};
 
       let checkName = null;
       let checkAccount = null;
@@ -123,70 +123,85 @@ const Login = React.createClass(
       // END -- 状态校验编码 --
 
       let loginInput =
-        <div className="login-input">
-          { this.state.showNote ?
-            <div style={{height:"2rem",lineHeight:"2rem",color:"#fff"}}>
-              <i className="fa fa-warning" />账号或密码错误, 请重试
-            </div>
-            :
-            <div style={{height:"2rem",lineHeight:"2rem",color:"#fff"}}></div>
+        <div className="pc-login-input">
+          {
+            this.state.showNote ?
+              <div style={{height:"24px",lineHeight:"24px",color:"#fff",fontSize:12,letterSpacing:4}}>
+                <i className="fa fa-warning" />账号或密码错误, 请重试
+              </div>
+              :
+              <div style={{height:"24px",lineHeight:"24px",color:"#fff",fontSize:12,letterSpacing:4}}></div>
           }
-          <List>
-            <InputItem onChange={(e)=>{this.setState({account:e})}}
-                       placeholder="手机/邮箱/账号"
-                       value={this.state.account}
-                       autoFocus>
-              账号
-            </InputItem>
-            <InputItem onChange={(e)=>{this.setState({password:e})}}
-                       placeholder="" value={this.state.password}
-                       type="password">
-              密码
-            </InputItem>
-          </List>
-          <WhiteSpace size="xl" />
-          <Button className="btn" onClick={this.login}>登陆</Button>
-          <WhiteSpace size="sm" />
+          <Input onChange={(e)=>{this.setState({account:e.target.value})}}
+                 style={{padding:"4px 0px"}}
+                 placeholder="手机/邮箱/账号"
+                 size="large"
+                 prefix={<Icon type="user" />}
+                 value={this.state.account}>
+          </Input>
+          <Input onChange={(e)=>{this.setState({password:e.target.value})}}
+                 style={{padding:"4px 0px"}}
+                 placeholder=""
+                 size="large"
+                 value={this.state.password}
+                 prefix={<Icon type="lock" />}
+                 type="password">
+          </Input>
+          <Button style={{fontSize:16,width:"100%",margin:"12px 0px",color:"#1DA57A",backgroundColor:"#fff"}}
+                  className="btn"
+                  onClick={this.login}>登陆</Button>
 
-          <div className="sub-title" onClick={()=>{this.setState({page:"reg"})}}>注册账号</div>
+          <div className="pc-sub-title" onClick={()=>{this.setState({page:"reg"})}}>注册账号</div>
         </div>;
       if (this.state.page === "reg") {
         loginInput =
-          <div className="login-input">
-            <List>
-              <InputItem
-                onChange={(e)=>{this.setState({regNick:e},()=>this.checkName('name',e,'checkRegNick'))}}
-                value={this.state.regNick}
-                autoFocus>
-                昵称{checkName}
-              </InputItem>
-              <InputItem
-                onChange={(e)=>{this.setState({regAccount:e},()=>this.checkName('account',e,'checkRegAccount'))}}
-                value={this.state.regAccount}
-                placeholder="手机/邮箱/账号">
-                账号{checkAccount}
-              </InputItem>
-              <InputItem onChange={(e)=>{this.setState({regPassword:e},()=>this.checkPassword(e))}}
-                         value={this.state.regPassword}
-                         placeholder="密码最少8位" type="password">
-                密码{checkPassword}
-              </InputItem>
-            </List>
-            <WhiteSpace size="xl" />
-            <Button className="btn" onClick={this.register}>注册</Button>
-            <WhiteSpace size="sm" />
+          <div className="pc-login-input">
+            <Input
+              onChange={(e)=>{this.setState({regNick:e.target.value},()=>this.checkName('name',this.state.regNick,'checkRegNick'))}}
+              value={this.state.regNick}
+              size="large"
+              style={{padding:"4px 0px"}}
+              placeholder="昵称"
+              prefix={<Icon type="shop" />}
+              suffix={checkName}
+              >
+            </Input>
+            <Input
+              onChange={(e)=>{this.setState({regAccount:e.target.value},()=>this.checkName('account',this.state.regAccount,'checkRegAccount'))}}
+              value={this.state.regAccount}
+              size="large"
+              style={{padding:"4px 0px"}}
+              placeholder="手机/邮箱/账号"
+              prefix={<Icon type="user" />}
+              suffix={checkAccount}
+              >
+            </Input>
+            <Input
+              onChange={(e)=>{this.setState({regPassword:e.target.value},()=>this.checkPassword(this.state.regPassword))}}
+              value={this.state.regPassword}
+              size="large"
+              style={{padding:"4px 0px"}}
+              placeholder="密码最少8位" type="password"
+              prefix={<Icon type="lock" />}
+              suffix={checkPassword}
+              >
+            </Input>
+            <Button style={{fontSize:16,width:"100%",margin:"12px 0px",color:"#1DA57A",backgroundColor:"#fff"}}
+                    className="btn" onClick={this.register}>注册</Button>
 
-            <div className="sub-title" onClick={()=>{this.setState({page:"login"})}}>已有账号, 登陆</div>
+            <div className="pc-sub-title" onClick={()=>{this.setState({page:"login"})}}>已有账号, 登陆</div>
           </div>;
       }
       return (
-        <div className="flex-container">
-          <div className="main-title">Milky Way</div>
-          {loginInput}
+        <div className="pc-login-background">
+          <div className="pc-flex-container">
+            <div className="pc-main-title">Milky Way</div>
+            {loginInput}
+          </div>
         </div>
       );
     }
   }
 );
 
-export default Login;
+export default pcLogin;

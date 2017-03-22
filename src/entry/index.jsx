@@ -8,6 +8,8 @@ import { Router,Route,hashHistory } from 'react-router';
 import App from '../component/App';
 import home from '../component/newHomepage.jsx';
 import index from '../component/personalManage/index.jsx';
+import pcLogin from '../component/login/pcLogin.jsx';
+
 
 // MOBILE模块引入
 import AntM from '../component/AntM.jsx';
@@ -23,6 +25,7 @@ ReactDom.render(
       </Route>
       <Route component={AntM}>
         <Route path="/login" component={login}></Route>
+        <Route path="/pcLogin" component={pcLogin}></Route>
         <Route path="/main/:uid" component={market}></Route>
       </Route>
     </Router>
