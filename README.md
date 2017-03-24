@@ -14,5 +14,6 @@
 `json-server --watch db.json`
 5. run web server
 `tnpm run dev`
-6. visit web : http://localhost:8000/index.html
-7. visit db : http://localhost:3000/users
+6. visit H5 web for trading : http://localhost:8000/index.html#/login
+7. visit PC web for biz managing : http://localhost:8000/index.html#/pcLogin
+8. visit db : http://localhost:3000/users
